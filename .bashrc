@@ -10,7 +10,7 @@ fi
 
 # User specific aliases and functions
 
-PS1='$(/home/burleigh/bin/prompt.pl)'
+PS1='$($HOME/config_files/prompt.pl)'
 
 export PATH="$HOME/.pyenv/bin:$PATH"
 
