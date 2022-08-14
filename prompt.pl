@@ -85,22 +85,22 @@ if (defined($ENV{'AWS_PROFILE'})) {
 ## http://www.tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html
 ## http://mywiki.wooledge.org/BashFAQ/053
 
-# my $resetAttrs   = "\001\033[0m\002";
-# my $boldStart    = "\001\033[1m\002";
-# my $redStart     = "\001\033[31m\002";
-# my $boldRedStart = "\001\033[1;31m\002";
+my $resetAttrs   = "\001\033[0m\002";
+my $boldStart    = "\001\033[1m\002";
+my $redStart     = "\001\033[31m\002";
+my $boldRedStart = "\001\033[1;31m\002";
 
-my $boldStart = "%B";
-my $boldStop  = "%b";
+#my $boldStart = "%B";
+#my $boldStop  = "%b";
 
-my $redStart = "%F{red}";
-my $redStop  = "%f";
+#my $redStart = "%F{red}";
+#my $redStop  = "%f";
 
-my $boldRedStart = $boldStart . $redStart;
-my $boldRedStop  = $redStop . $boldStop;
+#my $boldRedStart = $boldStart . $redStart;
+#my $boldRedStop  = $redStop . $boldStop;
 
 my $promptStartAttr = $boldStart;
-my $promptStopAttr  = $boldStop;
+my $promptStopAttr  = $resetAttrs;
 
 if ($curUser eq "root") {
   $promptStartAttr = $boldRedStart;
