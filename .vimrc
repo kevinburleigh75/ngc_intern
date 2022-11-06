@@ -32,6 +32,10 @@ set wrap
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set smartindent
 
+" undo/redo
+nnoremap u :undo<CR>
+nnoremap U :redo<CR>
+
 " stop removing indentation from comments in python
 inoremap # X<c-h>#
 
@@ -42,6 +46,13 @@ nnoremap j gj
 nnoremap gj j
 map <Up> k
 map <Down> j
+
+" e to move forward, E to move backward
+nnoremap E b
+
+" toggle virtual edit mode
+nnoremap <C-w>v :set virtualedit=all<CR>
+nnoremap <C-w>V :set virtualedit=<CR>
 
 " always show the cursor position
 set ruler
