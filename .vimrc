@@ -43,12 +43,15 @@ nnoremap gj j
 map <Up> k
 map <Down> j
 
-" always how the cursor position
+" always show the cursor position
 set ruler
 
 " show line numbers
 set number
 set numberwidth=5
+
+" toggle line numbers
+nnoremap <C-w>n :set number!<CR>
 
 " set behavior of tab completion
 set wildmode=longest,list
@@ -96,6 +99,9 @@ set softtabstop =2
 set shiftwidth  =2
 set expandtab
 
+" toggle line wrapping
+nnoremap <silent> <C-w>w :set wrap!<CR>
+
 " show specific line widths
 "set colorcolumn=80
 "highlight ColorColumn ctermbg=darkgrey
@@ -109,4 +115,7 @@ color default
 nmap <leader>l :set list!<CR>
 set listchars=tab:»\ ,trail:·,nbsp:·,eol:¬
 set list
+
+" toggle invisibles
+nnoremap <C-w>i :set list!<CR>
 
