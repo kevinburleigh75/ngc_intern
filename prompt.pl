@@ -66,6 +66,21 @@ if (defined($ENV{'VIRTUAL_ENV'})) {
 
   $virtualenvStr = "{" . $virtualenvName . $virtualenvDangerStr . "} ";
 }
+else
+{
+  my @output = `pyenv versions`;
+  if (!$?)
+  {
+    my $output = join('', @output);
+    if ($output =~ m/^\s*\*\s+(\S+)/m)
+    {
+      my $env = $1;
+      if ($env ne "system") {
+        $virtualenvStr = "{" . $env . "} ";
+      }
+    }
+  }
+}
 
 ##
 ## Current AWS profile (if any)
